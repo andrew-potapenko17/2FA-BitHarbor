@@ -1,0 +1,9 @@
+# virtual env
+venv/
+
+# logging
+django_errors.log
+error.log
+
+# local db
+db.sqlite3
