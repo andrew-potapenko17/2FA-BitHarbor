@@ -1,1 +1,15 @@
 CRITICAL 2026-03-22 15:34:59,289 views UNIQUE constraint failed: main_customuser.username
+CRITICAL 2026-03-22 20:45:54,591 views Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+CRITICAL 2026-03-22 20:53:22,693 views UNIQUE constraint failed: main_customuser.username
+CRITICAL 2026-03-22 20:54:00,419 views Error 1 connecting to redis-14170.crce218.eu-central-1-1.ec2.cloud.redislabs.com:14170. [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1081).
+CRITICAL 2026-03-22 20:56:12,493 views Error 1 connecting to redis-14170.crce218.eu-central-1-1.ec2.cloud.redislabs.com:14170. [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1081).
+CRITICAL 2026-03-22 21:05:03,816 views AbstractConnection.__init__() got an unexpected keyword argument 'ssl_cert_reqs'
+CRITICAL 2026-03-22 21:06:05,461 views no such table: main_customuser
+CRITICAL 2026-03-22 21:09:27,558 views Field 'id' expected a number but got ''.
+CRITICAL 2026-03-22 21:11:43,908 views main/mail_verify.html
+CRITICAL 2026-03-22 21:12:31,794 views 'function' object has no attribute 'delete'
+CRITICAL 2026-03-23 00:55:24,751 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486fe82a33asm214081605e9.11 - gsmtp')
+CRITICAL 2026-03-23 00:57:22,380 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486fe82ae69sm219850565e9.9 - gsmtp')
+CRITICAL 2026-03-23 00:58:10,831 views no such table: main_customuser
+CRITICAL 2026-03-23 00:58:51,129 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486ff1d8138sm64595375e9.34 - gsmtp')
+CRITICAL 2026-03-23 01:04:25,953 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486fd9845a2sm439088175e9.6 - gsmtp')

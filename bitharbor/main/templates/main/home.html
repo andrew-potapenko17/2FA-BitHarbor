@@ -19,7 +19,7 @@
                     Scan this QR code with Google Authenticator or any 2FA app, then enter the code below.
                 </p>
 
-                <form method="POST" action="{% url 'verify_mfa' %}">
+                <form method="POST" action="{% url 'verify_otp' %}">
                     {% csrf_token %}
 
                     <div class="form-floating mb-3">

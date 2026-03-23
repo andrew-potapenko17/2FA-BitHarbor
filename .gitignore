@@ -7,3 +7,6 @@ error.log
 
 # local db
 db.sqlite3
+
+# env file
+.env

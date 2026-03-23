@@ -7,8 +7,9 @@
 
             <h4 class="mb-3">Verify Code</h4>
             <p class="text-muted mb-4">Enter the 6-digit code from your authenticator app</p>
-
-            <form method="POST" action="{% url 'verify_mfa' %}">
+            
+            {% if type == 'otp' %}
+            <form method="POST" action="{% url 'verify_otp' %}">
                 {% csrf_token %}
 
                 <div class="form-floating mb-3">
@@ -29,7 +30,29 @@
                     Verify
                 </button>
             </form>
+            {% else %}
+            <form method="POST" action="{% url 'verify_mail' %}">
+                {% csrf_token %}
 
+                <div class="form-floating mb-3">
+                    <input 
+                        type="text" 
+                        name="mail_code" 
+                        maxlength="6" 
+                        class="form-control text-center fs-4"
+                        placeholder="123456"
+                        required
+                    >
+                    <label>Confirm Mail With Code</label>
+                </div>
+
+                <input type="hidden" name="user_id" value="{{ user_id }}" />
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    Verify
+                </button>
+            </form>
+            {% endif %}
         </div>
     </div>
 </div>

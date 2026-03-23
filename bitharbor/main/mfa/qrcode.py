@@ -2,7 +2,7 @@ import io, base64
 import pyotp
 import qrcode
 
-def generate_otp_qrcode(mfa_secret: str, username: str):
+def generate_otp_qrcode(mfa_secret: str, username: str) -> str:
     otp_uri = pyotp.totp.TOTP(mfa_secret).provisioning_uri(
         name=username,
         issuer_name="BitHarbor"
