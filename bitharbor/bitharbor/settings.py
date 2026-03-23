@@ -101,7 +101,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = "streamermr229@gmail.com"
-EMAIL_HOST_PASSWORD = "pgeh xdvd lpkm jrtk"
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 
 # Password validation

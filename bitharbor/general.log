@@ -13,3 +13,4 @@ CRITICAL 2026-03-23 00:57:22,380 views (535, b'5.7.8 Username and Password not a
 CRITICAL 2026-03-23 00:58:10,831 views no such table: main_customuser
 CRITICAL 2026-03-23 00:58:51,129 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486ff1d8138sm64595375e9.34 - gsmtp')
 CRITICAL 2026-03-23 01:04:25,953 views (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-486fd9845a2sm439088175e9.6 - gsmtp')
+CRITICAL 2026-03-23 12:08:43,093 views UNIQUE constraint failed: main_customuser.username
