@@ -117,8 +117,8 @@ def verify_mail(request):
 
         try:
             user = CustomUser.objects.get(id=user_id)
-
-            if verify_mail_code(user_id, input_code):
+            verify_result = verify_mail_code(user_id, input_code)
+            if verify_result == "success":
                 user.is_active = True
                 user.save()
 
@@ -126,7 +126,7 @@ def verify_mail(request):
                 messages.success(request, "Mail verified")
                 return redirect('home')
             else:
-                messages.warning(request, "Invalid mail code")
+                messages.warning(request, verify_result)
                 return redirect('verify_mail')
         except Exception as e:
             logger.critical(e)

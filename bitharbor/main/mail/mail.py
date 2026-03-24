@@ -4,19 +4,19 @@ def send_verification_mail(receiver: str, code: str):
     subject = "Verify your BitHarbor account"
 
     message = f"""
-Hi,
+    Hi,
 
-Thank you for registering at BitHarbor.
+    Thank you for registering at BitHarbor.
 
-Your verification code is: {code}
+    Your verification code is: {code}
 
-Enter this code in the application to verify your email address.
+    Enter this code in the application to verify your email address.
 
-If you did not request this, please ignore this email.
+    If you did not request this, please ignore this email.
 
-Best regards,  
-BitHarbor Team
-"""
+    Best regards,  
+    BitHarbor Team
+    """
 
     html_message = f"""
     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
