@@ -1,5 +1,5 @@
 from ..redis.db import *
-from .mail_code_generation import generate_code, hash_code
+from .mail_code_generation import hash_code
 import pyotp
 
 def verify_2fa_otp(user, otp) -> bool:
@@ -19,8 +19,8 @@ def verify_mail_code(user_id: str, input_code: str) -> str:
     if not stored_hash:
         return "Code Expired"
 
-    if stored_hash == hash_code(input_code):
-        attempts = increment_attempts(user_id)
+    if stored_hash != hash_code(input_code):
+        increment_attempts(user_id)
         return "Wrong code"
     
     delete_verification_data(f"email_verify:{user_id}")

@@ -1,22 +1,9 @@
-from django.core.mail import send_mail
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+import os
 
 def send_verification_mail(receiver: str, code: str):
     subject = "Verify your BitHarbor account"
-
-    message = f"""
-    Hi,
-
-    Thank you for registering at BitHarbor.
-
-    Your verification code is: {code}
-
-    Enter this code in the application to verify your email address.
-
-    If you did not request this, please ignore this email.
-
-    Best regards,  
-    BitHarbor Team
-    """
 
     html_message = f"""
     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
@@ -33,11 +20,16 @@ def send_verification_mail(receiver: str, code: str):
     </div>
     """
 
-    send_mail(
-        subject,
-        message,
-        "streamermr229@gmail.com",
-        [receiver],
-        fail_silently=False,
-        html_message=html_message
-    )
+    try:
+        message = Mail(
+            from_email='streamermr229@gmail.com',
+            to_emails=receiver,
+            subject=subject,
+            html_content=html_message
+        )
+        sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
+        response = sg.send(message)
+        return response.status_code
+    except Exception as e:
+        print(e)
+        return None

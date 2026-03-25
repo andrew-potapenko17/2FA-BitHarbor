@@ -54,7 +54,7 @@ def login_page(request):
                 messages.error(request, "Invalid Credantials")
                 return redirect('login')
             if user.mfa_enabled:
-                return render(request, 'main/otp_verify.html', {'user_id': user.id, 'type': 'otp'})
+                return render(request, 'main/mfa_verify.html', {'user_id': user.id, 'type': 'otp'})
             login(request, user)
             messages.success(request, 'Successfully logged in')
             return redirect('home')
@@ -127,7 +127,7 @@ def verify_mail(request):
                 return redirect('home')
             else:
                 messages.warning(request, verify_result)
-                return redirect('verify_mail')
+                return render(request, 'main/mfa_verify.html', {'type': 'mail'})
         except Exception as e:
             logger.critical(e)
             messages.error(request, "401 Unauthorized Error")
