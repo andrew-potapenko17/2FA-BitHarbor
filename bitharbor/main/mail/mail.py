@@ -22,7 +22,7 @@ def send_verification_mail(receiver: str, code: str):
 
     try:
         message = Mail(
-            from_email='streamermr229@gmail.com',
+            from_email='andrew.potapenko17@gmail.com',
             to_emails=receiver,
             subject=subject,
             html_content=html_message
